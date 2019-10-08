@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'ly!bv=nb&(s3=+kx1r9%8ww_40)8*&6dd@@#k=bh-*0z3cu(mc'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['mysite.com', 'localhost', '127.0.0.1']
 
@@ -38,11 +38,25 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
     'account.authentication.EmailAuthBackend',
+    'social_core.backends.facebook.FacebookOAuth2',
+    'social_core.backends.twitter.TwitterOAuth',
+    'social_core.backends.google.GoogleOAuth2',
 ]
+# Facebook SocialAuthentication
+SOCIAL_AUTH_FACEBOOK_KEY = '2557969204223875'   # Facebook App ID
+SOCIAL_AUTH_FACEBOOK_SECRET = '75b8947461b9d8f1b363fd28cd745363'    # Facebook App Secret
+SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']
+
+
+# Google SocialAuthentication
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '785715095433-1pdbl68co7m1s1fq2u2ivp24fvieubap.apps.googleusercontent.com'  # Google Consumer Key
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'hPOz3ZTdM_DmnJpyF_QKlu5O'   # Google Consumer Secret
+
 
 # Application definition
 
 INSTALLED_APPS = [
+    'sslserver',
     'account.apps.AccountConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -51,6 +65,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'social_django',
+    'images.apps.ImagesConfig',
 ]
 
 MIDDLEWARE = [
