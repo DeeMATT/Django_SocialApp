@@ -25,7 +25,12 @@ SECRET_KEY = 'ly!bv=nb&(s3=+kx1r9%8ww_40)8*&6dd@@#k=bh-*0z3cu(mc'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['mysite.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = [
+                'mysite.com',
+                'localhost', 
+                '127.0.0.1',
+                '22b62e55.ngrok.io'
+                 ]
 
 LOGIN_REDIRECT_URL = 'dashboard'
 LOGIN_URL = 'login'
@@ -66,6 +71,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'social_django',
     'images.apps.ImagesConfig',
+    'sorl.thumbnail',
 ]
 
 MIDDLEWARE = [
