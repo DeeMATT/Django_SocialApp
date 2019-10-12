@@ -21,6 +21,10 @@ urlpatterns = [
 
     # reset password urls
     path('', include('django.contrib.auth.urls')),
+
+    # lists of users and details
+    path('users/', views.user_list, name='user_list'),
+    path('users/<username>/', views.user_detail, name='user_detail'),
 ]
 
 """
