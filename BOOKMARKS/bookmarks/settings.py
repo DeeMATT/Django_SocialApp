@@ -32,6 +32,11 @@ SECRET_KEY = 'ly!bv=nb&(s3=+kx1r9%8ww_40)8*&6dd@@#k=bh-*0z3cu(mc'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+# Redis Server Configuration
+REDIS_HOST = 'localhost'
+REDIS_PORT = 6379
+REDIS_DB = 0
+
 ALLOWED_HOSTS = [
                 'mysite.com',
                 'localhost', 
